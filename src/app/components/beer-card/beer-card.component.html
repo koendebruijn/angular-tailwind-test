@@ -1,0 +1,16 @@
+<div class="max-w-sm rounded overflow-hidden shadow-lg ">
+    <div class="flex justify-center align-center h-60">
+        <img class="h-full" [src]="beer.image_url" [alt]="beer.name">
+    </div>
+    <div class="px-6 my-4  overflow-y-auto h-60" >
+        <div class="font-bold text-xl mb-2">{{beer.name}}</div>
+        <p class="text-gray-700 text-base">
+          {{beer.description}}
+        </p>
+      </div>
+      <div class="mx-6 pt-4 pb-6 overflow-x-auto no-scroll">
+        <span class="inline bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">alc:&nbsp;{{beer.abv}}%</span>
+        <span *ngFor="let hops of beer.ingredients.hops" class="inline bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{hops.name.replace(" ", "\u00a0")}}</span>
+      </div>
+</div>
+
